@@ -37,8 +37,6 @@ class HomeActivity : AppCompatActivity() {
                 screen_content.visibility = View.GONE
                 error_content.visibility = View.VISIBLE
                 home_error_title.text = homeState.errorMessage
-                retry_button.setOnClickListener { viewModel.getData() }
-
             }
             HomeShowContent -> {
                 home_progress.visibility = View.GONE
