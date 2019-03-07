@@ -1,53 +1,46 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
 apply from: '../dependencies.gradle'
 
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.gabdullinae.binancewatcher"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':data')
     implementation project(':domain')
-
     implementation libraries.kotlinJdk
     implementation libraries.rxJava2
-    implementation libraries.rxJavaAndroid
-    implementation libraries.lifecycleExtensions
-    implementation libraries.material
-    implementation libraries.constraintLayout
+    implementation libraries.dagger
     implementation libraries.retrofit
     implementation libraries.retrofitRxAdapter
     implementation libraries.retrofitConverter
     implementation libraries.gson
     implementation libraries.okhttp
     implementation libraries.okHttpLoggingInterceptor
-    implementation libraries.dagger
-
-    kapt kaptLibs.daggerCompiler
 
     testImplementation testLibraries.junit
     androidTestImplementation testLibraries.androidTestRunner
     androidTestImplementation testLibraries.espressoCore
+}
+repositories {
+    mavenCentral()
 }
