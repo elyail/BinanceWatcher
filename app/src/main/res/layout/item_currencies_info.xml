@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/material_design_margin">
 
     <TextView
@@ -45,7 +45,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginStart="@dimen/material_design_margin"
         android:layout_marginTop="@dimen/material_design_margin"
         android:background="@android:color/darker_gray"
         app:layout_constraintTop_toBottomOf="@id/status" />

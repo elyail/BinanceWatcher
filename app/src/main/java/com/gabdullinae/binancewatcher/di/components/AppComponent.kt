@@ -1,7 +1,7 @@
 package com.gabdullinae.binancewatcher.di.components
 
 import android.content.Context
-import com.gabdullinae.binancewatcher.BaseActivity
+import com.gabdullinae.binancewatcher.home.HomeActivity
 import com.gabdullinae.binancewatcher.di.modules.ApplicationModule
 import com.gabdullinae.binancewatcher.di.modules.NetworkModule
 import dagger.BindsInstance
@@ -23,5 +23,5 @@ interface AppComponent {
 
     fun homeBuilder(): HomeComponent.Builder
 
-    fun inject(baseActivity: BaseActivity)
+    fun inject(homeActivity: HomeActivity)
 }

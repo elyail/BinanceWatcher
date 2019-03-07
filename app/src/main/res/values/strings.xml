@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BinanceWatcher</string>
+    <string name="retry_button_title">Попробовать ещё раз</string>
 </resources>

@@ -3,6 +3,7 @@ package com.gabdullinae.binancewatcher.di.modules
 import com.gabdullinae.binancewatcher.home.HomeViewModel
 import com.gabdullinae.data.network.api.BinanceRestApi
 import com.gabdullinae.data.repositories.HomeRepositoryImpl
+import com.gabdullinae.data.utils.Resources
 import com.gabdullinae.domain.repositories.HomeRepository
 import com.gabdullinae.domain.usecases.HomeUseCase
 import dagger.Module
@@ -18,5 +19,5 @@ class HomeModule {
     fun provideAuthRepository(api: BinanceRestApi): HomeRepository = HomeRepositoryImpl(api)
 
     @Provides
-    fun provideViewModel(useCase: HomeUseCase) = HomeViewModel(useCase)
+    fun provideViewModel(useCase: HomeUseCase, resources: Resources) = HomeViewModel(useCase, resources)
 }
